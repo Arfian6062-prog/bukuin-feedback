@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Form kritik dan saran BUKUIN" />
+  <title>BUKUIN — Kritik & Saran</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="brand">BUKUIN</div>
+      <h1>Bantu BUKUIN jadi lebih baik.</h1>
+      <p>Masukanmu membantu kami membuat pembukuan UMKM semakin sederhana dan berguna.</p>
+    </section>
+
+    <section class="card">
+      <form id="feedbackForm">
+        <input type="hidden" name="version" value="BUKUIN Pro V1.0" />
+
+        <label>Seberapa puas kamu dengan BUKUIN? <span>*</span></label>
+        <div class="stars" role="radiogroup" aria-label="Rating">
+          <input id="s5" type="radio" name="rating" value="5" required><label for="s5" title="5">★</label>
+          <input id="s4" type="radio" name="rating" value="4"><label for="s4" title="4">★</label>
+          <input id="s3" type="radio" name="rating" value="3"><label for="s3" title="3">★</label>
+          <input id="s2" type="radio" name="rating" value="2"><label for="s2" title="2">★</label>
+          <input id="s1" type="radio" name="rating" value="1"><label for="s1" title="1">★</label>
+        </div>
+
+        <label for="feature">Fitur yang paling membantu <span>*</span></label>
+        <select id="feature" name="feature" required>
+          <option value="">Pilih fitur</option>
+          <option>Dashboard</option><option>Transaksi</option><option>Invoice</option>
+          <option>Invoice PDF</option><option>Laporan Bulanan</option><option>Lainnya</option>
+        </select>
+
+        <label for="difficulty">Apa yang membuat kamu kesulitan?</label>
+        <textarea id="difficulty" name="difficulty" maxlength="1000" placeholder="Ceritakan bagian yang membingungkan atau tidak berjalan sesuai harapan..."></textarea>
+
+        <label for="request">Fitur apa yang kamu inginkan selanjutnya?</label>
+        <textarea id="request" name="request" maxlength="1000" placeholder="Contoh: stok barang, piutang, kirim invoice WhatsApp..."></textarea>
+
+        <label>Apakah kamu merekomendasikan BUKUIN? <span>*</span></label>
+        <div class="choices">
+          <label><input type="radio" name="recommend" value="Ya" required> Ya</label>
+          <label><input type="radio" name="recommend" value="Mungkin"> Mungkin</label>
+          <label><input type="radio" name="recommend" value="Tidak"> Tidak</label>
+        </div>
+
+        <div class="grid">
+          <div><label for="name">Nama <small>(opsional)</small></label><input id="name" name="name" maxlength="80" autocomplete="name"></div>
+          <div><label for="whatsapp">WhatsApp <small>(opsional)</small></label><input id="whatsapp" name="whatsapp" maxlength="30" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx"></div>
+        </div>
+
+        <label class="consent"><input type="checkbox" name="testimonialConsent" value="Ya"> Saya mengizinkan ulasan saya digunakan sebagai testimoni BUKUIN. Nama/identitas hanya digunakan jika saya memberikannya.</label>
+
+        <input class="honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button id="submitBtn" type="submit">Kirim Masukan</button>
+        <p class="privacy">Data dikirim ke database privat BUKUIN dan tidak ditampilkan ke publik.</p>
+        <div id="status" class="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
